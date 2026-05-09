@@ -1,0 +1,350 @@
+<testsuites id="" name="" tests="8" failures="0" skipped="0" errors="0" time="40.23833799999999">
+<testsuite name="e2e/books.spec.ts" timestamp="2026-05-09T18:28:07.988Z" hostname="chromium" tests="8" failures="0" skipped="0" time="137.483" errors="0">
+<testcase name="Books - Búsqueda en catálogo de DemoQA › TC-BOOKS-001: Búsqueda con palabra clave existente &quot;Git&quot;" classname="e2e/books.spec.ts" time="20.429">
+<properties>
+<property name="objective" value="Verificar que el campo de búsqueda filtra correctamente con una palabra clave que existe en el catálogo">
+</property>
+<property name="feature" value="Book Search">
+</property>
+<property name="severity" value="Critical">
+</property>
+<property name="type" value="Positive / Functional">
+</property>
+<property name="precondition" value="Catálogo de libros cargado correctamente">
+</property>
+<property name="expected" value="Al buscar &quot;Git&quot; se muestra al menos 1 resultado que incluye &quot;Git Pocket Guide&quot;">
+</property> 
+</properties>
+<system-out>
+<![CDATA[  [18:28:10.306] Iniciando test: TC-BOOKS-001: Búsqueda con palabra clave existente "Git"
+  [18:28:10.306] Browser: chromium
+  [18:28:10.327] Grabando video en: /Users/wilsonjrdiaz/Downloads/playwright/reports/videos/tc_books_001__b_squeda_con_palabra_clave_existente__git__chromium.mp4
+
+  ► Navegando a → "https://demoqa.com/books"
+  [18:28:16.169] [BROWSER ERROR] Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED
+  ✔ URL actual: https://demoqa.com/books
+  ✔ Título de página: demosite
+
+  ► Escribiendo en searchBox → "Git"
+  ✔ Texto ingresado: Git
+  ✅ ASSERT: La tabla tiene al menos 1 fila con resultados
+  ✅ ASSERT: El título "Git Pocket Guide" es visible en la tabla
+  ✔ Libro encontrado: Git Pocket Guide
+  [18:28:19.178] Screenshot adjuntado al reporte
+  [18:28:21.274] Video guardado en: reports/videos/
+  [18:28:21.274] Resultado del test: PASSED
+  [18:28:21.274] ────────────────────────────────────────────────────────────
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-fe7b8-alabra-clave-existente-Git--chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-fe7b8-alabra-clave-existente-Git--chromium/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-fe7b8-alabra-clave-existente-Git--chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Books - Búsqueda en catálogo de DemoQA › TC-BOOKS-002: Búsqueda con &quot;JavaScript&quot; devuelve múltiples resultados" classname="e2e/books.spec.ts" time="19.037">
+<properties>
+<property name="objective" value="Verificar que la búsqueda con una palabra clave genérica devuelve múltiples resultados del catálogo">
+</property>
+<property name="feature" value="Book Search">
+</property>
+<property name="severity" value="High">
+</property>
+<property name="type" value="Positive / Functional">
+</property>
+<property name="precondition" value="Catálogo de libros cargado correctamente">
+</property>
+<property name="expected" value="Al buscar &quot;JavaScript&quot; se devuelven varios títulos que contienen esa palabra">
+</property>
+</properties>
+<system-out>
+<![CDATA[  [18:28:10.306] Iniciando test: TC-BOOKS-002: Búsqueda con "JavaScript" devuelve múltiples resultados
+  [18:28:10.306] Browser: chromium
+  [18:28:10.323] Grabando video en: /Users/wilsonjrdiaz/Downloads/playwright/reports/videos/tc_books_002__b_squeda_con__javascript__devuelve_m_ltiples_resultados_chromium.mp4
+
+  ► Navegando a → "https://demoqa.com/books"
+  ✔ URL actual: https://demoqa.com/books
+  ✔ Título de página: demosite
+
+  ► Escribiendo en searchBox → "JavaScript"
+  ✔ Texto ingresado: JavaScript
+  ✅ ASSERT: La tabla contiene al menos 1 resultado
+  ✅ ASSERT: "Learning JavaScript Design Patterns" encontrado en resultados
+  [18:28:18.569] Total de resultados encontrados: 4
+  ✔   Resultado 1: Learning JavaScript Design Patterns
+  ✔   Resultado 2: Speaking JavaScript
+  ✔   Resultado 3: Programming JavaScript Applications
+  ✔   Resultado 4: Eloquent JavaScript, Second Edition
+  ✅ ASSERT: Se encontraron 4 resultados (> 1)
+  [18:28:20.696] Video guardado en: reports/videos/
+  [18:28:20.697] Resultado del test: PASSED
+  [18:28:20.697] ────────────────────────────────────────────────────────────
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-ee360-vuelve-múltiples-resultados-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-ee360-vuelve-múltiples-resultados-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-ee360-vuelve-múltiples-resultados-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Books - Búsqueda en catálogo de DemoQA › TC-BOOKS-003: Búsqueda con &quot;ISTQB Fundamentals&quot; no devuelve resultados" classname="e2e/books.spec.ts" time="18.715">
+<properties>
+<property name="objective" value="Verificar que al buscar un término inexistente el catálogo muestra estado vacío sin resultados">
+</property>
+<property name="feature" value="Book Search">
+</property>
+<property name="severity" value="Critical">
+</property>
+<property name="type" value="Negative / Boundary">
+</property>
+<property name="precondition" value="Catálogo de libros cargado correctamente">
+</property>
+<property name="expected" value="Al buscar &quot;ISTQB Fundamentals&quot; la tabla muestra &quot;Page 1 of 0&quot; sin filas de datos">
+</property>
+<property name="note" value="Término mencionado explícitamente en el enunciado del desafío">
+</property>
+</properties>
+<system-out>
+<![CDATA[  [18:28:10.306] Iniciando test: TC-BOOKS-003: Búsqueda con "ISTQB Fundamentals" no devuelve resultados
+  [18:28:10.306] Browser: chromium
+  [18:28:10.324] Grabando video en: /Users/wilsonjrdiaz/Downloads/playwright/reports/videos/tc_books_003__b_squeda_con__istqb_fundamentals__no_devuelve_resultados_chromium.mp4
+
+  ► Navegando a → "https://demoqa.com/books"
+  [18:28:16.160] [BROWSER ERROR] Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED
+  ✔ URL actual: https://demoqa.com/books
+  ✔ Título de página: demosite
+
+  ► Escribiendo en searchBox → "ISTQB Fundamentals"
+  ✔ Texto ingresado: ISTQB Fundamentals
+  ✅ ASSERT: La paginación muestra "Page 1 of 0" — sin resultados
+  ✔ Filas encontradas en la tabla: 0
+  ✅ ASSERT: Tabla tiene 0 fila(s) — comportamiento correcto para búsqueda sin coincidencias
+  [18:28:19.832] Video guardado en: reports/videos/
+  [18:28:19.832] Resultado del test: PASSED
+  [18:28:19.832] ────────────────────────────────────────────────────────────
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-3af58-tals-no-devuelve-resultados-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-3af58-tals-no-devuelve-resultados-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-3af58-tals-no-devuelve-resultados-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Books - Búsqueda en catálogo de DemoQA › TC-BOOKS-004: Limpiar búsqueda restaura todos los libros" classname="e2e/books.spec.ts" time="20.422">
+<properties>
+<property name="objective" value="Verificar que al limpiar el campo de búsqueda el catálogo regresa a su estado completo con todos los libros disponibles">
+</property>
+<property name="feature" value="Book Search - Reset">
+</property>
+<property name="severity" value="Medium">
+</property>
+<property name="type" value="Positive / State Transition">
+</property>
+<property name="precondition" value="Catálogo de libros cargado correctamente">
+</property>
+<property name="expected" value="Después de limpiar el searchBox se muestran los 8 libros del catálogo completo">
+</property>
+</properties>
+<system-out>
+<![CDATA[  [18:28:10.306] Iniciando test: TC-BOOKS-004: Limpiar búsqueda restaura todos los libros
+  [18:28:10.306] Browser: chromium
+  [18:28:10.328] Grabando video en: /Users/wilsonjrdiaz/Downloads/playwright/reports/videos/tc_books_004__limpiar_b_squeda_restaura_todos_los_libros_chromium.mp4
+
+  ► Navegando a → "https://demoqa.com/books"
+  ✔ URL actual: https://demoqa.com/books
+  ✔ Título de página: demosite
+
+  ► Escribiendo en searchBox (búsqueda inicial) → "Git"
+  ✔ Texto ingresado: Git
+  ✔ Libros visibles tras filtro "Git": 1
+  ✅ ASSERT: "Git Pocket Guide" visible — filtro activo confirmado
+
+  ► Limpiando el campo searchBox
+  [18:28:19.870] Campo de búsqueda vaciado
+  ✔ Libros visibles tras limpiar búsqueda: 8
+  ✅ ASSERT: Catálogo restaurado con 8 libro(s) — todos los libros disponibles
+  [18:28:21.595] Video guardado en: reports/videos/
+  [18:28:21.595] Resultado del test: PASSED
+  [18:28:21.595] ────────────────────────────────────────────────────────────
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-3b9c2-a-restaura-todos-los-libros-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-3b9c2-a-restaura-todos-los-libros-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-3b9c2-a-restaura-todos-los-libros-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Books - Búsqueda en catálogo de DemoQA › TC-BOOKS-005: Búsqueda con &quot;Speaking&quot; encuentra &quot;Speaking JavaScript&quot;" classname="e2e/books.spec.ts" time="15.091">
+<properties>
+<property name="objective" value="Verificar que la búsqueda con la palabra clave &quot;Speaking&quot; retorna el libro esperado &quot;Speaking JavaScript&quot;">
+</property>
+<property name="feature" value="Book Search - Parametrized">
+</property>
+<property name="severity" value="High">
+</property>
+<property name="type" value="Positive / Data-Driven">
+</property>
+<property name="keyword" value="Speaking">
+</property>
+<property name="expected" value="El libro &quot;Speaking JavaScript&quot; debe aparecer en los resultados">
+</property>
+</properties>
+<system-out>
+<![CDATA[  [18:28:29.421] Iniciando test: TC-BOOKS-005: Búsqueda con "Speaking" encuentra "Speaking JavaScript"
+  [18:28:29.421] Browser: chromium
+  [18:28:29.436] Grabando video en: /Users/wilsonjrdiaz/Downloads/playwright/reports/videos/tc_books_005__b_squeda_con__speaking__encuentra__speaking_javascript__chromium.mp4
+
+  ► Navegando a → "https://demoqa.com/books"
+  ✔ URL actual: https://demoqa.com/books
+  ✔ Título de página: demosite
+
+  ► Escribiendo en searchBox → "Speaking"
+  ✔ Keyword ingresada: Speaking
+  ✅ ASSERT: Tabla con al menos 1 resultado visible
+  ✅ ASSERT: Libro encontrado: "Speaking JavaScript"
+  ✔ Coincidencia: keyword="Speaking" → título="Speaking JavaScript"
+  [18:28:34.873] Resultados para "Speaking": 1 libro(s)
+  [18:28:34.874]   • Speaking JavaScript
+  [18:28:36.482] Video guardado en: reports/videos/
+  [18:28:36.482] Resultado del test: PASSED
+  [18:28:36.482] ────────────────────────────────────────────────────────────
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-ac2be-uentra-Speaking-JavaScript--chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-ac2be-uentra-Speaking-JavaScript--chromium/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-ac2be-uentra-Speaking-JavaScript--chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Books - Búsqueda en catálogo de DemoQA › TC-BOOKS-005: Búsqueda con &quot;Eloquent&quot; encuentra &quot;Eloquent JavaScript, Second Edition&quot;" classname="e2e/books.spec.ts" time="13.832">
+<properties>
+<property name="objective" value="Verificar que la búsqueda con la palabra clave &quot;Eloquent&quot; retorna el libro esperado &quot;Eloquent JavaScript, Second Edition&quot;">
+</property>
+<property name="feature" value="Book Search - Parametrized">
+</property>
+<property name="severity" value="High">
+</property>
+<property name="type" value="Positive / Data-Driven">
+</property>
+<property name="keyword" value="Eloquent">
+</property>
+<property name="expected" value="El libro &quot;Eloquent JavaScript, Second Edition&quot; debe aparecer en los resultados">
+</property>
+</properties>
+<system-out>
+<![CDATA[  [18:28:29.421] Iniciando test: TC-BOOKS-005: Búsqueda con "Eloquent" encuentra "Eloquent JavaScript, Second Edition"
+  [18:28:29.421] Browser: chromium
+  [18:28:29.437] Grabando video en: /Users/wilsonjrdiaz/Downloads/playwright/reports/videos/tc_books_005__b_squeda_con__eloquent__encuentra__eloquent_javascript__second_edition__chromium.mp4
+
+  ► Navegando a → "https://demoqa.com/books"
+  ✔ URL actual: https://demoqa.com/books
+  ✔ Título de página: demosite
+
+  ► Escribiendo en searchBox → "Eloquent"
+  ✔ Keyword ingresada: Eloquent
+  ✅ ASSERT: Tabla con al menos 1 resultado visible
+  ✅ ASSERT: Libro encontrado: "Eloquent JavaScript, Second Edition"
+  ✔ Coincidencia: keyword="Eloquent" → título="Eloquent JavaScript, Second Edition"
+  [18:28:34.175] Resultados para "Eloquent": 1 libro(s)
+  [18:28:34.175]   • Eloquent JavaScript, Second Edition
+  [18:28:35.201] Video guardado en: reports/videos/
+  [18:28:35.201] Resultado del test: PASSED
+  [18:28:35.201] ────────────────────────────────────────────────────────────
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-65791--JavaScript-Second-Edition--chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-65791--JavaScript-Second-Edition--chromium/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-65791--JavaScript-Second-Edition--chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Books - Búsqueda en catálogo de DemoQA › TC-BOOKS-006: Búsqueda con &quot;TerminoQueNoExiste&quot; no devuelve resultados" classname="e2e/books.spec.ts" time="15.152">
+<properties>
+<property name="objective" value="Verificar que el sistema maneja correctamente búsquedas con términos inexistentes como &quot;TerminoQueNoExiste&quot; mostrando tabla vacía">
+</property>
+<property name="feature" value="Book Search - Parametrized">
+</property>
+<property name="severity" value="High">
+</property>
+<property name="type" value="Negative / Data-Driven">
+</property>
+<property name="keyword" value="TerminoQueNoExiste">
+</property>
+<property name="expected" value="La tabla debe estar vacía: &quot;Page 1 of 0&quot;">
+</property>
+</properties>
+<system-out>
+<![CDATA[  [18:28:31.041] Iniciando test: TC-BOOKS-006: Búsqueda con "TerminoQueNoExiste" no devuelve resultados
+  [18:28:31.041] Browser: chromium
+  [18:28:31.054] Grabando video en: /Users/wilsonjrdiaz/Downloads/playwright/reports/videos/tc_books_006__b_squeda_con__terminoquenoexiste__no_devuelve_resultados_chromium.mp4
+
+  ► Navegando a → "https://demoqa.com/books"
+  ✔ URL actual: https://demoqa.com/books
+  ✔ Título de página: demosite
+
+  ► Escribiendo en searchBox (término inexistente) → "TerminoQueNoExiste"
+  ✔ Keyword ingresada: TerminoQueNoExiste
+  ✅ ASSERT: Sin resultados para "TerminoQueNoExiste" — comportamiento correcto
+  ✔ Filas en tabla: 0
+  [18:28:35.321] La búsqueda de "TerminoQueNoExiste" devolvió 0 fila(s) — como se esperaba
+  [18:28:36.272] Video guardado en: reports/videos/
+  [18:28:36.273] Resultado del test: PASSED
+  [18:28:36.273] ────────────────────────────────────────────────────────────
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-ef1c4-iste-no-devuelve-resultados-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-ef1c4-iste-no-devuelve-resultados-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-ef1c4-iste-no-devuelve-resultados-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Books - Búsqueda en catálogo de DemoQA › TC-BOOKS-006: Búsqueda con &quot;12345XYZ&quot; no devuelve resultados" classname="e2e/books.spec.ts" time="14.805">
+<properties>
+<property name="objective" value="Verificar que el sistema maneja correctamente búsquedas con términos inexistentes como &quot;12345XYZ&quot; mostrando tabla vacía">
+</property>
+<property name="feature" value="Book Search - Parametrized">
+</property>
+<property name="severity" value="High">
+</property>
+<property name="type" value="Negative / Data-Driven">
+</property>
+<property name="keyword" value="12345XYZ">
+</property>
+<property name="expected" value="La tabla debe estar vacía: &quot;Page 1 of 0&quot;">
+</property>
+</properties>
+<system-out>
+<![CDATA[  [18:28:31.395] Iniciando test: TC-BOOKS-006: Búsqueda con "12345XYZ" no devuelve resultados
+  [18:28:31.396] Browser: chromium
+  [18:28:31.412] Grabando video en: /Users/wilsonjrdiaz/Downloads/playwright/reports/videos/tc_books_006__b_squeda_con__12345xyz__no_devuelve_resultados_chromium.mp4
+
+  ► Navegando a → "https://demoqa.com/books"
+  ✔ URL actual: https://demoqa.com/books
+  ✔ Título de página: demosite
+
+  ► Escribiendo en searchBox (término inexistente) → "12345XYZ"
+  ✔ Keyword ingresada: 12345XYZ
+  ✅ ASSERT: Sin resultados para "12345XYZ" — comportamiento correcto
+  ✔ Filas en tabla: 0
+  [18:28:35.851] La búsqueda de "12345XYZ" devolvió 0 fila(s) — como se esperaba
+  [18:28:36.744] Video guardado en: reports/videos/
+  [18:28:36.744] Resultado del test: PASSED
+  [18:28:36.744] ────────────────────────────────────────────────────────────
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-0ae6f-5XYZ-no-devuelve-resultados-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-0ae6f-5XYZ-no-devuelve-resultados-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-books-Books---Búsqueda-0ae6f-5XYZ-no-devuelve-resultados-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
